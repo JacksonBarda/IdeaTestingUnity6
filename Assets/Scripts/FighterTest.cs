@@ -1,4 +1,6 @@
 using UnityEngine;
+using System;
+using UnityEngine.UI; 
 using TMPro; // Make sure to include this namespace for TextMeshPro
 
 public class FighterTest : MonoBehaviour
@@ -16,6 +18,9 @@ public class FighterTest : MonoBehaviour
     {
         attackTextUI.text = attackPower.ToString();
         defenseTextUI.text = defensePower.ToString();
+
+        
+    
     }
 
     // Update is called once per frame
