@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &43007711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2829457627258398524, guid: a9f324770b66e2c42b7a109d61cf1c34, type: 3}
+  m_PrefabInstance: {fileID: 4471099856734200007}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &349395171
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,6 +601,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &819131746 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3175525162728544809, guid: a9f324770b66e2c42b7a109d61cf1c34, type: 3}
+  m_PrefabInstance: {fileID: 4471099856734200007}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &919986761 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7857268317965723562, guid: a9f324770b66e2c42b7a109d61cf1c34, type: 3}
@@ -624,7 +634,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a974b34a69a1da47bc3aa196dc96c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childrenToDrag: []
+  childrenToDrag:
+  - {fileID: 43007711}
+  - {fileID: 819131746}
 --- !u!61 &1026031345
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -979,7 +991,7 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     - target: {fileID: 4501137752515670071, guid: a9f324770b66e2c42b7a109d61cf1c34, type: 3}
       propertyPath: m_RenderMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5028514753661450464, guid: a9f324770b66e2c42b7a109d61cf1c34, type: 3}
       propertyPath: m_Pivot.x
