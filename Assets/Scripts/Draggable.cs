@@ -1,9 +1,4 @@
 using UnityEngine;
-using System.Collections.Generic;
-using UnityEngine.UI;
-using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
-using UnityEngine.Assertions.Must;
 
 
 public class Draggable : MonoBehaviour
@@ -11,21 +6,12 @@ public class Draggable : MonoBehaviour
     private bool isDragging = false;
     private Vector3 offset;
     private Camera mainCamera;
-    [SerializeField]
-    private List<GameObject> childrenToDrag = new List<GameObject>();
-    private List<Vector3> childOffsets = new List<Vector3>();
+
     
     void Start()
     {
-        int i = 0;
-        foreach (GameObject child in childrenToDrag)
-        {
 
-            //Debug.Log(childOffsets[0]);
-            childOffsets.Add(child.transform.position - transform.position);
 
-            i++;
-        }
         mainCamera = Camera.main;
     }
 
@@ -44,17 +30,10 @@ public class Draggable : MonoBehaviour
              GameManager.Instance.CurrentState == GameManager.GameState.Store))
         {
             isDragging = true;
-            offset = transform.position - Input.mousePosition;
-            if(childrenToDrag.Count > 0)
-            {
 
-                int i = 0;
-                foreach (GameObject child in childrenToDrag)
-                {
-                    childOffsets[i] = child.transform.position - transform.position;
-                    i++;
-                }
-            }
+            // Convert mouse position to world space and calculate the offset
+            Vector3 mouseWorldPosition = GetMouseWorldPosition();
+            offset = transform.position - mouseWorldPosition;
         }
     }
 
@@ -65,18 +44,21 @@ public class Draggable : MonoBehaviour
 
     private void DragObject()
     {
-        transform.position = Input.mousePosition + offset;
-        if(childrenToDrag.Count > 0)
-        {
-            int i = 0;
-            foreach (GameObject child in childrenToDrag)
-            {
-                child.transform.position = transform.position + childOffsets[i];
-                i++;
-            }
-        }
+        // Convert mouse position to world space and apply the offset
+        Vector3 mouseWorldPosition = GetMouseWorldPosition();
+        transform.position = mouseWorldPosition + offset;
 
     }
 
+    private Vector3 GetMouseWorldPosition()
+    {
+        // Get the mouse position in screen space
+        Vector3 mouseScreenPosition = Input.mousePosition;
 
+        // Set the z-coordinate to match the object's distance from the camera
+        mouseScreenPosition.z = mainCamera.WorldToScreenPoint(transform.position).z;
+
+        // Convert the screen position to world space
+        return mainCamera.ScreenToWorldPoint(mouseScreenPosition);
+    }
 }
