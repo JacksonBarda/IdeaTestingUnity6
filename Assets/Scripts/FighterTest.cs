@@ -1,46 +1,55 @@
 using UnityEngine;
-using System;
-using UnityEngine.UI; 
-using TMPro; // Make sure to include this namespace for TextMeshPro
+using TMPro;
 
 public class FighterTest : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI attackTextUI;
+    [SerializeField] private TextMeshProUGUI defenseTextUI;
+    [SerializeField] private Animator animator;
     [SerializeField]
-    private TextMeshProUGUI attackTextUI; // Reference to the TextMeshProUGUI component
+    public int AttackPower = 10;
     [SerializeField]
-    private int attackPower = 10;
-    [SerializeField]
-    private TextMeshProUGUI defenseTextUI; // Reference to the TextMeshProUGUI component
-    [SerializeField]
-    private int defensePower = 10;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        attackTextUI.text = attackPower.ToString();
-        defenseTextUI.text = defensePower.ToString();
+    public int DefensePower = 10;
+    public bool IsAnimationComplete { get; private set; } = true; 
 
-        
-    
+    private void Start()
+    {
+        UpdateUI();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(int damage)
     {
+        DefensePower -= damage;
+        if (DefensePower < 0) DefensePower = 0;
+        UpdateUI();
+    }
+
+    public void TriggerAttackAnimation()
+    {
+        if(IsAnimationComplete){
+            if (animator != null)
+            {
+                IsAnimationComplete = false; // Set the flag to true when the animation is triggered
+                animator.SetTrigger("Attack");
+            }    
+        }
 
     }
 
-    public void NextTurn(){
-        if(attackPower > 0)
-        {
-            //attackPower--;
-            //attackTextUI.text = attackPower.ToString();
-        }
-        if(defensePower > 0){
-            defensePower--;
-            defenseTextUI.text = defensePower.ToString();
-        }else{
-            attackTextUI.text = "";
-            defenseTextUI.text = "dead";
-        }
+    // This method will be called by the animation event
+    public void OnAttackAnimationComplete()
+    {
+        //Debug.Log("Anim Completed");
+        IsAnimationComplete = true;
+    }
+
+    private void UpdateUI()
+    {
+        attackTextUI.text = AttackPower.ToString();
+        if(DefensePower <= 0){
+            DefensePower = 0; // Ensure DefensePower is not negative
+            //GameManager.Instance.ChangeState(GameManager.GameState.Prep); // Change state to Prep if dead
+        }         
+        defenseTextUI.text = DefensePower > 0 ? DefensePower.ToString() : "Dead";
     }
 }
