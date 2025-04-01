@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     {
 
     }
-        public void ChangeToPrepState()
+    public void ChangeToPrepState()
     {
         ChangeToState(GameState.Prep);
     }

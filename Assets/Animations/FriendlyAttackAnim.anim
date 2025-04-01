@@ -24,9 +24,9 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: -6.53
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
+        inSlope: 8.88
+        outSlope: 8.88
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
@@ -35,16 +35,16 @@ AnimationClip:
         value: -0.61
         inSlope: 0
         outSlope: 0
-        tangentMode: 136
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1.3333334
         value: -6.53
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
+        inSlope: -8.88
+        outSlope: -8.88
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
@@ -102,9 +102,9 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: -6.53
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
+        inSlope: 8.88
+        outSlope: 8.88
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
@@ -113,16 +113,16 @@ AnimationClip:
         value: -0.61
         inSlope: 0
         outSlope: 0
-        tangentMode: 136
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1.3333334
         value: -6.53
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
+        inSlope: -8.88
+        outSlope: -8.88
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
@@ -139,9 +139,9 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 1.3333334
-    functionName: OnAttackAnimationComplete()
+    functionName: OnAttackAnimationComplete
     data: 
-    objectReferenceParameter: {fileID: 7400000}
+    objectReferenceParameter: {fileID: 4176541695129885788, guid: a9f324770b66e2c42b7a109d61cf1c34, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

@@ -23,10 +23,10 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 4.84
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
+        value: 6.54
+        inSlope: -8.775
+        outSlope: -8.775
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
@@ -35,16 +35,16 @@ AnimationClip:
         value: 0.69
         inSlope: 0
         outSlope: 0
-        tangentMode: 136
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1.3333334
-        value: 4.84
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
+        value: 6.54
+        inSlope: 8.775
+        outSlope: 8.775
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
@@ -84,7 +84,7 @@ AnimationClip:
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -101,10 +101,10 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 4.84
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
+        value: 6.54
+        inSlope: -8.775
+        outSlope: -8.775
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
@@ -113,16 +113,16 @@ AnimationClip:
         value: 0.69
         inSlope: 0
         outSlope: 0
-        tangentMode: 136
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1.3333334
-        value: 4.84
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
+        value: 6.54
+        inSlope: 8.775
+        outSlope: 8.775
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
@@ -137,4 +137,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 1.3333334
+    functionName: OnAttackAnimationComplete
+    data: 
+    objectReferenceParameter: {fileID: 4176541695129885788, guid: 0590abd5c644b5f43bf1ba29d95bdb42, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

@@ -21,7 +21,7 @@ public class CombatManager : MonoBehaviour
         // Find fighters by their tags
         friendlyFighter = GameObject.FindGameObjectWithTag("Friendly").GetComponent<FighterTest>();
         enemyFighter = GameObject.FindGameObjectWithTag("Enemy").GetComponent<FighterTest>();
-        
+
     }
 
     private void Update()

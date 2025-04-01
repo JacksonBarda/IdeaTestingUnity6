@@ -128,6 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 114953544}
+  - component: {fileID: 114953545}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -148,10 +149,22 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1189526896}
   - {fileID: 665143811}
+  - {fileID: 1189526896}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114953545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114953543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb04e11fbc982564591f7db24bff3a43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &349395171
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,9 +248,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 665143809}
-        m_TargetAssemblyTypeName: FighterTest, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 665143810}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ChangeToCombatState
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -730,7 +743,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Next
+  m_text: 'Fight
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -883,11 +898,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5028514753661450464, guid: 0590abd5c644b5f43bf1ba29d95bdb42, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 4.83
+      value: 6.54
       objectReference: {fileID: 0}
     - target: {fileID: 5028514753661450464, guid: 0590abd5c644b5f43bf1ba29d95bdb42, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.268
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5028514753661450464, guid: 0590abd5c644b5f43bf1ba29d95bdb42, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -901,41 +916,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7857268317965723562, guid: 0590abd5c644b5f43bf1ba29d95bdb42, type: 3}
+      propertyPath: DefensePower
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4176541695129885788, guid: 0590abd5c644b5f43bf1ba29d95bdb42, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1504191772}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0590abd5c644b5f43bf1ba29d95bdb42, type: 3}
---- !u!1 &1504191771 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4176541695129885788, guid: 0590abd5c644b5f43bf1ba29d95bdb42, type: 3}
-  m_PrefabInstance: {fileID: 1504191770}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1504191772
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1504191771}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 91a5b4e43782fa447b38d891383a4a52, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2009691465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,7 +1109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5028514753661450464, guid: a9f324770b66e2c42b7a109d61cf1c34, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.35
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5028514753661450464, guid: a9f324770b66e2c42b7a109d61cf1c34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1133,6 +1122,10 @@ PrefabInstance:
     - target: {fileID: 5028514753661450464, guid: a9f324770b66e2c42b7a109d61cf1c34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7857268317965723562, guid: a9f324770b66e2c42b7a109d61cf1c34, type: 3}
+      propertyPath: DefensePower
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

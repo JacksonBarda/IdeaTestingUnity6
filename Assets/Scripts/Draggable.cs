@@ -10,8 +10,6 @@ public class Draggable : MonoBehaviour
     
     void Start()
     {
-
-
         mainCamera = Camera.main;
     }
 
